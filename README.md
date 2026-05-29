@@ -23,17 +23,6 @@ ZBrush Spotlight is a texture management system built into ZBrush. When a Spotli
 
 ---
 
-## Project Structure
-
-```
-zslformat.py            # Format library: RLE decoder, block parser, channel assembler
-zsltoimg.py             # CLI entry point: file I/O, PNG saving, progress output
-zsltoimg.bat            # Windows drag-and-drop launcher
-zsl_specification.md    # Full technical specification of the .zsl format
-```
-
----
-
 ## Usage
 
 ### Easy Way: Pre-compiled Executable (Windows)
