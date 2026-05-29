@@ -10,9 +10,39 @@ Output is placed in a folder named <filename>_extracted next to the source file.
 
 import os
 import sys
-
-from PIL import Image
+import struct
+import zlib
 import zslformat
+
+
+def write_png(path: str, width: int, height: int, rgba_data: bytes) -> None:
+    """
+    Saves raw RGBA pixel data to a standard PNG file using only built-in modules
+    (zlib, struct) to avoid external dependencies like Pillow.
+    """
+    png_sig = b'\x89PNG\r\n\x1a\n'
+    
+    def make_chunk(tag: bytes, data: bytes) -> bytes:
+        length = struct.pack('>I', len(data))
+        crc = struct.pack('>I', zlib.crc32(tag + data))
+        return length + tag + data + crc
+
+    # IHDR: width, height, 8-bit depth, color type 6 (RGBA), compression 0, filter 0, interlace 0
+    ihdr_data = struct.pack('>IIBBBBB', width, height, 8, 6, 0, 0, 0)
+    ihdr = make_chunk(b'IHDR', ihdr_data)
+
+    # IDAT: Scanlines prefixed with filter type 0 (None)
+    row_size = width * 4
+    filtered_data = bytearray()
+    for y in range(height):
+        filtered_data.append(0)
+        filtered_data.extend(rgba_data[y * row_size : (y + 1) * row_size])
+        
+    idat = make_chunk(b'IDAT', zlib.compress(bytes(filtered_data), level=9))
+    iend = make_chunk(b'IEND', b'')
+
+    with open(path, 'wb') as f:
+        f.write(png_sig + ihdr + idat + iend)
 
 
 def extract(zsl_path: str, output_dir: str) -> bool:
@@ -60,15 +90,15 @@ def extract(zsl_path: str, output_dir: str) -> bool:
         out_path = os.path.join(output_dir, out_name)
 
         try:
-            img = Image.frombytes('RGBA', (width, height), pixel_data)
-            img.save(out_path)
-            print(f"  [{i+1}/{total}] {out_name}  ({width}×{height})")
+            write_png(out_path, width, height, pixel_data)
+            print(f"  [{i+1}/{total}] {out_name}  ({width}x{height})")
             saved += 1
         except Exception as exc:
             print(f"  [{i+1}/{total}] Error saving block {i}: {exc}")
 
-    print(f"\nDone. Saved {saved}/{total} image(s) → {output_dir}")
+    print(f"\nDone. Saved {saved}/{total} image(s) -> {output_dir}")
     return saved > 0
+
 
 
 def main():

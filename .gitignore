@@ -26,8 +26,7 @@ pip-delete-this-directory.txt
 # Build & Distribution
 build/
 dist/
-*.spec
-_build_/
+upx/
 
 # Application Data & Logs
 *.log
