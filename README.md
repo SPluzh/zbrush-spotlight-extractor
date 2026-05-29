@@ -39,7 +39,6 @@ zsl_specification.md    # Full technical specification of the .zsl format
 ### Drag and Drop (Windows)
 
 Drag any `.zsl` file from File Explorer and drop it onto `zsltoimg.bat`. The console window will stay open so you can review the extraction log.
-
 Output will be placed in `Spotlight_extracted/` next to the source file.
 ---
 
