@@ -46,16 +46,6 @@ The easiest way to use the tool is to download the standalone **`zsltoimg.exe`**
    zsltoimg.exe <path_to_file.zsl>
    ```
 
-### Developer Way: Python Script
-
-If you prefer to run the raw source code, it requires **Python 3** and has **zero external dependencies**:
-
-1. Run the script from the command line:
-   ```bash
-   python zsltoimg.py <path_to_file.zsl>
-   ```
-2. **Windows Drag-and-Drop Wrapper:** Alternatively, drag and drop any `.zsl` file onto `zsltoimg.bat` in the repository root.
-
 ---
 
 ## How It Works
