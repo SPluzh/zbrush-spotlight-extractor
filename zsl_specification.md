@@ -1,4 +1,4 @@
-# 🛠️ ZBrush Spotlight (.zsl) Container and Texture File Format Specification
+# ZBrush Spotlight (.zsl) Container and Texture File Format Specification
 
 This document provides the definitive technical specification for the proprietary Pixologic ZBrush Spotlight (`.zsl`) file format. It covers container structure, serialization blocks, headers, custom RLE compression, planar layout geometry, and alpha mapping rules.
 
