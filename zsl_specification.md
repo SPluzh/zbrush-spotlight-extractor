@@ -77,8 +77,8 @@ The width and height of the embedded texture are derived directly from the heade
    $$H = \frac{\text{decomp\_size}}{\text{pitch}}$$
 
 *Example (main image in Spotlight.zsl):*
-* $\text{pitch} = 7680 \implies W = 1920$ pixels
-* $\text{decomp\_size} = 11\,381\,760 \implies H = \frac{11381760}{7680} = 1482$ pixels
+* $\text{pitch} = 7680 \implies W = 1920 \text{ pixels}$
+* $\text{decomp\_size} = 11\,381\,760 \implies H = \frac{11381760}{7680} = 1482 \text{ pixels}$
 
 ---
 
