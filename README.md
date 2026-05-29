@@ -36,10 +36,25 @@ zsl_specification.md    # Full technical specification of the .zsl format
 
 ## Usage
 
-### Drag and Drop (Windows)
+### Easy Way: Pre-compiled Executable (Windows)
 
-Drag any `.zsl` file from File Explorer and drop it onto `zsltoimg.bat`. The console window will stay open so you can review the extraction log.
-Output will be placed in `Spotlight_extracted/` next to the source file.
+The easiest way to use the tool is to download the standalone **`zsltoimg.exe`** from the [Releases](https://github.com/your-username/zbrush-spotlight-extractor/releases) page:
+
+1. **Drag and Drop:** Simply drag any `.zsl` file from File Explorer and drop it onto `zsltoimg.exe`. It will automatically extract all textures into a folder next to the source file and show a completion log.
+2. **Command Line:** Run the executable from your terminal:
+   ```bash
+   zsltoimg.exe <path_to_file.zsl>
+   ```
+
+### Developer Way: Python Script
+
+If you prefer to run the raw source code, it requires **Python 3** and has **zero external dependencies**:
+
+1. Run the script from the command line:
+   ```bash
+   python zsltoimg.py <path_to_file.zsl>
+   ```
+2. **Windows Drag-and-Drop Wrapper:** Alternatively, drag and drop any `.zsl` file onto `zsltoimg.bat` in the repository root.
 
 ---
 
