@@ -1,0 +1,43 @@
+# Agents & Tools
+.gemini/
+.serena/
+.cursorrules
+.windsurfrules
+gemini.md
+todo.md
+implementation_plan.md
+walkthrough.md
+
+# Custom folder
+no_sync/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Build & Distribution
+build/
+dist/
+*.spec
+_build_/
+
+# Application Data & Logs
+data/
+*.log
+settings.ini
+
+# Archives
+*.zip
+
+# IDEs
+.vscode/
+.idea/
+*.swp
