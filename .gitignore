@@ -30,7 +30,6 @@ dist/
 _build_/
 
 # Application Data & Logs
-data/
 *.log
 settings.ini
 
