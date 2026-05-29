@@ -38,7 +38,7 @@ zsl_specification.md    # Full technical specification of the .zsl format
 
 ### Easy Way: Pre-compiled Executable (Windows)
 
-The easiest way to use the tool is to download the standalone **`zsltoimg.exe`** from the [Releases](https://github.com/your-username/zbrush-spotlight-extractor/releases) page:
+The easiest way to use the tool is to download the standalone **`zsltoimg.exe`** from the [Releases](https://github.com/SPluzh/zbrush-spotlight-extractor/releases) page:
 
 1. **Drag and Drop:** Simply drag any `.zsl` file from File Explorer and drop it onto `zsltoimg.exe`. It will automatically extract all textures into a folder next to the source file and show a completion log.
 2. **Command Line:** Run the executable from your terminal:
