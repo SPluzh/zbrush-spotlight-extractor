@@ -71,14 +71,12 @@ The compressed chunk stream begins immediately after the `data_start_marker`. Ea
 
 The width and height of the embedded texture are derived directly from the header's `pitch` and `decomp_size` fields:
 
-1. **Width ($W$):**
-   $$W = \frac{\text{pitch}}{4}$$
-2. **Height ($H$):**
-   $$H = \frac{\text{decomp\_size}}{\text{pitch}}$$
+1. **Width** `W = pitch / 4`
+2. **Height** `H = decomp_size / pitch`
 
 *Example (main image in Spotlight.zsl):*
-* $\text{pitch} = 7680 \implies W = 1920 \text{ pixels}$
-* $\text{decomp\_size} = 11\,381\,760 \implies H = \frac{11381760}{7680} = 1482 \text{ pixels}$
+* `pitch` = 7680 → **W = 1920 pixels**
+* `decomp_size` = 11 381 760 → **H = 11381760 / 7680 = 1482 pixels**
 
 ---
 
